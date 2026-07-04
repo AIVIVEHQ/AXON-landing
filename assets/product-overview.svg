@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <!-- 占位产品截图：上线前替换为真实产品界面图 -->
+  <rect width="1600" height="900" fill="#0c121b"/>
+  <rect x="0" y="0" width="1600" height="64" fill="#0a0f17"/>
+  <circle cx="36" cy="32" r="10" stroke="#7ce6ff" stroke-width="3" fill="none"/>
+  <rect x="64" y="24" width="120" height="16" rx="8" fill="#1a2433"/>
+  <rect x="1440" y="20" width="120" height="24" rx="12" fill="#152435"/>
+  <!-- sidebar -->
+  <rect x="0" y="64" width="240" height="836" fill="#0a0f17"/>
+  <g fill="#1a2433">
+    <rect x="24" y="104" width="180" height="14" rx="7"/>
+    <rect x="24" y="144" width="150" height="14" rx="7"/>
+    <rect x="24" y="184" width="165" height="14" rx="7"/>
+    <rect x="24" y="224" width="140" height="14" rx="7"/>
+    <rect x="24" y="264" width="170" height="14" rx="7"/>
+  </g>
+  <!-- chart panel -->
+  <rect x="272" y="96" width="1020" height="520" rx="12" fill="#0a101a" stroke="#152030"/>
+  <polyline points="300,540 380,500 460,520 540,450 620,470 700,380 780,420 860,340 940,360 1020,280 1100,320 1180,240 1260,270" stroke="#2eafff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <polyline points="300,560 380,545 460,555 540,510 620,525 700,470 780,495 860,440 940,455 1020,400 1100,425 1180,370 1260,390" stroke="#7ee2f4" stroke-width="2" opacity="0.5" fill="none"/>
+  <g stroke="#131c29"><line x1="300" y1="200" x2="1260" y2="200"/><line x1="300" y1="300" x2="1260" y2="300"/><line x1="300" y1="400" x2="1260" y2="400"/><line x1="300" y1="500" x2="1260" y2="500"/></g>
+  <!-- right rail cards -->
+  <g>
+    <rect x="1316" y="96" width="252" height="160" rx="12" fill="#0a101a" stroke="#152030"/>
+    <rect x="1340" y="124" width="100" height="12" rx="6" fill="#1a2433"/>
+    <rect x="1340" y="152" width="160" height="22" rx="6" fill="#7ed6a3" opacity="0.35"/>
+    <rect x="1316" y="276" width="252" height="160" rx="12" fill="#0a101a" stroke="#152030"/>
+    <rect x="1340" y="304" width="100" height="12" rx="6" fill="#1a2433"/>
+    <rect x="1340" y="332" width="130" height="22" rx="6" fill="#2eafff" opacity="0.35"/>
+    <rect x="1316" y="456" width="252" height="160" rx="12" fill="#0a101a" stroke="#152030"/>
+    <rect x="1340" y="484" width="100" height="12" rx="6" fill="#1a2433"/>
+    <rect x="1340" y="512" width="145" height="22" rx="6" fill="#7ce6ff" opacity="0.3"/>
+  </g>
+  <!-- bottom table -->
+  <rect x="272" y="648" width="1296" height="220" rx="12" fill="#0a101a" stroke="#152030"/>
+  <g fill="#1a2433">
+    <rect x="300" y="680" width="1240" height="12" rx="6"/>
+    <rect x="300" y="716" width="1240" height="12" rx="6" opacity="0.7"/>
+    <rect x="300" y="752" width="1240" height="12" rx="6" opacity="0.55"/>
+    <rect x="300" y="788" width="1240" height="12" rx="6" opacity="0.4"/>
+    <rect x="300" y="824" width="1240" height="12" rx="6" opacity="0.3"/>
+  </g>
+</svg>

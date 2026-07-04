@@ -1,0 +1,287 @@
+/* 由 reference/split-css.py 从原站编译 CSS 整理生成，按场景拆分；改动请直接编辑本文件。 */
+
+.strategy-scene {
+    --strategy-map-gap: clamp(.875rem, 3.5vw, 1.375rem);
+    --strategy-card-min-height: clamp(3.5rem, 13vw, 4.5rem);
+    --strategy-card-padding: clamp(.75rem, 2.7vw, 1rem);
+    --strategy-target-size: clamp(13.75rem, 62vw, 19rem);
+    --strategy-light-anchor-size: clamp(24rem, calc(var(--strategy-target-size) * 2.4), 34rem);
+    --strategy-object-y: 0rem;
+    --strategy-focal-opacity: .56
+}
+
+.strategy-scene__visual {
+    position: relative
+}
+
+.strategy-map {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--strategy-map-gap);
+    min-height: 0;
+    isolation: isolate
+}
+
+.strategy-map__column {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(.625rem, 2vw, .8125rem)
+}
+
+.strategy-object {
+    position: relative;
+    z-index: 3;
+    order: 1;
+    display: grid;
+    width: min(100%, calc(var(--strategy-target-size) + 2rem));
+    place-self: center;
+    place-items: center;
+    transform: translateY(var(--strategy-object-y))
+}
+
+.strategy-map__column--source {
+    order: 2
+}
+
+.strategy-map__column--resolved {
+    order: 3
+}
+
+.strategy-fragment,
+.strategy-rule {
+    position: relative;
+    display: grid;
+    gap: .3125rem;
+    min-height: var(--strategy-card-min-height);
+    padding: var(--strategy-card-padding);
+    overflow: clip
+}
+
+.strategy-fragment:before,
+.strategy-rule:before {
+    display: none
+}
+
+.strategy-fragment__label,
+.strategy-rule__label {
+    position: relative;
+    color: var(--color-contrast-4);
+    font-family: var(--font-body);
+    font-size: clamp(.75rem, .6875rem + .18vw, .8125rem);
+    letter-spacing: 0;
+    line-height: 1.22
+}
+
+.strategy-fragment__value,
+.strategy-rule__value {
+    position: relative;
+    color: var(--color-contrast);
+    font-family: var(--font-body);
+    font-size: clamp(.9375rem, .875rem + .25vw, 1.0625rem);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.22
+}
+
+.strategy-object__target {
+    position: relative;
+    display: grid;
+    width: var(--strategy-target-size);
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%
+}
+
+.strategy-object__target-shell,
+.strategy-object__target-shell:before {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    content: "";
+    pointer-events: none
+}
+
+.strategy-object__target-shell {
+    border: 1px solid var(--color-contrast-5);
+    background: rgb(var(--rgb-base-deep) / .055)
+}
+
+.strategy-object__target-shell:before {
+    inset: 16%;
+    border: 1px solid var(--color-contrast-5)
+}
+
+.strategy-object__core-ring,
+.strategy-object__core-dot {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none
+}
+
+.strategy-object__light-anchor {
+    --site-light-anchor-height: var(--strategy-light-anchor-size);
+    --site-light-anchor-width: calc(var(--strategy-light-anchor-size) * 1.6667)
+}
+
+.strategy-object__core-ring {
+    inset: 39%;
+    border: 1px solid var(--color-contrast-5)
+}
+
+.strategy-object__core-ring:before {
+    display: none
+}
+
+.strategy-object__core-dot {
+    width: clamp(.5rem, .58vw, .6875rem);
+    aspect-ratio: 1;
+    background: var(--color-contrast);
+    opacity: .76
+}
+
+[data-strategy-time-replay-bridge] .strategy-object__core-dot {
+    border: 1px solid var(--color-contrast);
+    background: var(--color-visual-accent-soft);
+    opacity: 1
+}
+
+@media(min-width:30rem) {
+    .strategy-map__column {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+@media(min-width:42rem) {
+    .strategy-scene {
+        --strategy-target-size: clamp(16rem, 44vw, 22rem);
+        --strategy-light-anchor-size: clamp(34rem, calc(var(--strategy-target-size) * 3.4), 52rem);
+        --strategy-object-y: .125rem;
+        --strategy-focal-opacity: .66
+    }
+}
+
+@media(min-width:48rem) {
+    .strategy-scene {
+        --strategy-map-gap: clamp(.875rem, 1.7vw, 1.75rem);
+        --strategy-card-min-height: clamp(3.375rem, 4.1vw, 4.375rem);
+        --strategy-card-padding: clamp(.75rem, 1.05vw, .9375rem);
+        --strategy-target-size: clamp(15.5rem, 27vw, 21rem);
+        --strategy-light-anchor-size: clamp(32rem, calc(var(--strategy-target-size) * 2.85), 50rem);
+        --strategy-object-y: -.0625rem
+    }
+    .strategy-map {
+        grid-template-columns: minmax(8.75rem, .78fr) minmax(var(--strategy-target-size), .88fr) minmax(8.75rem, .78fr);
+        gap: var(--strategy-map-gap);
+        min-height: clamp(18.5rem, 32vw, 25rem)
+    }
+    .strategy-map__column {
+        grid-template-columns: 1fr;
+        gap: clamp(.6875rem, .9vw, .8125rem)
+    }
+    .strategy-object,
+    .strategy-map__column--source,
+    .strategy-map__column--resolved {
+        order: 0
+    }
+}
+
+@media(min-width:75rem) {
+    .strategy-scene {
+        --strategy-map-gap: clamp(1rem, 1.9vw, 2.25rem);
+        --strategy-card-padding: clamp(.75rem, .95vw, 1rem);
+        --strategy-card-min-height: clamp(3.5rem, 4.25vw, 4.75rem);
+        --strategy-target-size: clamp(17rem, 18.6vw, 22.75rem);
+        --strategy-light-anchor-size: clamp(34rem, calc(var(--strategy-target-size) * 2.65), 54rem);
+        --strategy-object-y: -.0625rem;
+        --strategy-focal-opacity: .74
+    }
+    .strategy-map {
+        grid-template-columns: minmax(9.25rem, .78fr) minmax(var(--strategy-target-size), .92fr) minmax(9.25rem, .78fr);
+        gap: var(--strategy-map-gap);
+        min-height: clamp(27rem, 38vw, 35.5rem)
+    }
+    .strategy-map__column {
+        grid-template-columns: 1fr;
+        gap: clamp(.75rem, .9vw, .9375rem)
+    }
+    .strategy-object,
+    .strategy-map__column--source,
+    .strategy-map__column--resolved {
+        order: 0
+    }
+}
+
+@media(min-width:120rem) {
+    .strategy-scene {
+        --strategy-map-gap: clamp(1.25rem, 2vw, 2.75rem);
+        --strategy-card-min-height: clamp(4.75rem, 3vw, 6rem);
+        --strategy-card-padding: clamp(1rem, .875vw, 1.3125rem);
+        --strategy-target-size: clamp(24.5rem, 13vw, 29rem);
+        --strategy-light-anchor-size: clamp(50rem, calc(var(--strategy-target-size) * 2.42), 72rem)
+    }
+    .strategy-map {
+        grid-template-columns: minmax(11rem, .82fr) minmax(var(--strategy-target-size), .96fr) minmax(11rem, .82fr);
+        min-height: clamp(32rem, 29vw, 44rem)
+    }
+    .strategy-fragment__label,
+    .strategy-rule__label {
+        font-size: .9375rem
+    }
+    .strategy-fragment__value,
+    .strategy-rule__value {
+        font-size: 1.25rem
+    }
+}
+
+@media(min-width:160rem) {
+    .strategy-scene {
+        --strategy-map-gap: clamp(1.5rem, 1.75vw, 3.25rem);
+        --strategy-card-min-height: clamp(5.5rem, 2vw, 6.875rem);
+        --strategy-card-padding: clamp(1.1875rem, .625vw, 1.5rem);
+        --strategy-target-size: clamp(30rem, 9vw, 34rem);
+        --strategy-light-anchor-size: clamp(64rem, calc(var(--strategy-target-size) * 2.2), 84rem)
+    }
+    .strategy-map {
+        grid-template-columns: minmax(13rem, .84fr) minmax(var(--strategy-target-size), 1fr) minmax(13rem, .84fr);
+        min-height: clamp(42rem, 24vw, 54rem)
+    }
+    .strategy-fragment__label,
+    .strategy-rule__label {
+        font-size: 1rem
+    }
+    .strategy-fragment__value,
+    .strategy-rule__value {
+        font-size: 1.375rem
+    }
+}
+
+@media(width>=75rem)and (height<=47.5rem) {
+    .strategy-scene {
+        --strategy-map-gap: clamp(.875rem, 1.55vw, 1.625rem);
+        --strategy-card-min-height: clamp(3.25rem, 3.9vw, 4.25rem);
+        --strategy-card-padding: .75rem;
+        --strategy-target-size: clamp(15.5rem, 17vw, 20.5rem)
+    }
+    .strategy-scene__intro {
+        --scene-title-size-fluid: clamp(4.375rem, 5.7vw, 6.75rem);
+        --scene-copy-measure: 21rem
+    }
+    .strategy-map {
+        min-height: clamp(23.5rem, 34vw, 30rem)
+    }
+}
+
+@media(height<=35rem)and (width<75rem) {
+    .strategy-scene {
+        --strategy-target-size: clamp(11.5rem, 42svh, 15.5rem);
+        --strategy-card-min-height: 3.25rem;
+        --strategy-card-padding: .75rem
+    }
+    .strategy-scene__intro {
+        --scene-title-size-fluid: clamp(3.125rem, 12vw, 4.625rem)
+    }
+}

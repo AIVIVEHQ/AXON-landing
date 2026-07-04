@@ -1,0 +1,106 @@
+/* 由 reference/split-css.py 从原站编译 CSS 整理生成，按场景拆分；改动请直接编辑本文件。 */
+
+.product-entry-scene {
+    --section-shot-width: 76rem;
+    display: grid;
+    align-items: center;
+    background: transparent
+}
+
+.product-entry-scene__inner {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    justify-items: center;
+    margin-block: auto
+}
+
+.product-entry-scene__intro {
+    --scene-title-measure: 9.65em;
+    max-width: min(100%, 58rem)
+}
+
+.product-entry-proof {
+    --section-shot-content-gap: clamp(.875rem, 2.6vw, 1.25rem);
+    --section-shot-shell-gap: clamp(.5rem, 1.7vw, .875rem)
+}
+
+.product-entry-proof .section-shot__frame {
+    border-radius: var(--radius-sm)
+}
+
+.product-entry-proof__markers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(.5rem, 2vw, .75rem);
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.product-entry-proof__marker {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    min-width: 0;
+    color: var(--color-contrast-3);
+    font-family: var(--font-body);
+    font-size: clamp(.75rem, .75rem + .125vw, .875rem);
+    line-height: 1.2
+}
+
+.product-entry-proof__marker-dot {
+    flex: 0 0 auto;
+    width: .375rem;
+    aspect-ratio: 1;
+    border-radius: var(--radius-pill);
+    background: var(--color-market-long);
+    opacity: .82
+}
+
+.product-entry-proof__marker:nth-child(2n) .product-entry-proof__marker-dot {
+    background: var(--color-market-short)
+}
+
+.product-entry-scene__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.75rem, 2vw, 1.125rem)
+}
+
+@media(width>=42rem) {
+    .product-entry-scene__intro {
+        --scene-title-measure: clamp(9.65em, 48vw, 10.85em);
+        max-width: min(100%, 82rem)
+    }
+    .product-entry-proof__markers {
+        grid-template-columns: repeat(5, minmax(0, 1fr))
+    }
+    .product-entry-proof__marker {
+        justify-content: center;
+        text-align: center
+    }
+}
+
+@media(width>=120rem) {
+    .product-entry-scene {
+        --section-shot-width: 96rem
+    }
+}
+
+@media(width>=160rem) {
+    .product-entry-scene {
+        --section-shot-width: 118rem
+    }
+    .product-entry-scene__intro {
+        --scene-title-measure: clamp(10.25em, 42vw, 11.75em);
+        max-width: min(100%, 92rem)
+    }
+    .product-entry-proof {
+        --section-shot-shell-gap: clamp(.875rem, .5vw, 1.25rem)
+    }
+    .product-entry-proof__marker {
+        font-size: clamp(.875rem, .25vw, 1rem)
+    }
+}

@@ -1,0 +1,74 @@
+/* 由 reference/split-css.py 从原站编译 CSS 整理生成，按场景拆分；改动请直接编辑本文件。 */
+
+.gate-question {
+    --question-headline-size: var(--scene-display-scale);
+    --question-gap: clamp(.9375rem, calc(var(--question-headline-size) * .135), 1.625rem);
+    --question-lead-size: .75rem;
+    --question-lead-line-height: 1.3;
+    --question-lead-width: min(100%, 19rem);
+    --question-content-width: min(100%, var(--scene-frame-width), max(var(--question-lead-width), calc(var(--question-headline-size) * 10.6)));
+    position: relative;
+    display: grid;
+    min-height: 100svh;
+    place-items: center;
+    padding: var(--scene-padding-top) var(--container-padding-x) var(--scene-padding-bottom);
+    overflow: visible;
+    isolation: isolate;
+    background: transparent
+}
+
+.gate-question__light-anchor {
+    --site-light-anchor-height: clamp(29rem, 72svh, 42rem);
+    --site-light-anchor-width: calc(var(--site-light-anchor-height) * 1.6667)
+}
+
+.gate-question__light-anchor .site-focal-light[data-light-mode=anchor] {
+    opacity: var(--gate-question-focal-opacity, .74)
+}
+
+.gate-question__content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    width: var(--question-content-width);
+    gap: var(--question-gap);
+    isolation: isolate;
+    text-align: center
+}
+
+.gate-question__lead {
+    --scene-eyebrow-line-height: var(--question-lead-line-height);
+    width: min(100%, var(--question-lead-width));
+    max-width: var(--question-lead-width);
+    font-size: var(--question-lead-size);
+    text-wrap: normal
+}
+
+.gate-question__headline {
+    display: grid;
+    justify-items: center;
+    color: var(--color-contrast);
+    font-family: var(--font-display);
+    font-size: var(--question-headline-size);
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: .9;
+    text-wrap: normal
+}
+
+.gate-question__headline-line {
+    display: block;
+    white-space: nowrap
+}
+
+@media(min-width:42rem) {
+    .gate-question {
+        --question-lead-size: clamp(.875rem, calc(var(--question-headline-size) * .088), 1.0625rem);
+        --question-lead-line-height: 1.4;
+        --question-lead-width: min(var(--scene-frame-width), max(34rem, calc(var(--question-headline-size) * 5.7)))
+    }
+    .gate-question__light-anchor {
+        --site-light-anchor-height: clamp(32rem, 78svh, 58rem)
+    }
+}

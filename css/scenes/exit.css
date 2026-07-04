@@ -1,0 +1,97 @@
+/* 由 reference/split-css.py 从原站编译 CSS 整理生成，按场景拆分；改动请直接编辑本文件。 */
+
+.exit-scene {
+    --exit-aside-measure: 34rem;
+    --exit-section-min-height: clamp(32rem, 60svh, 40rem);
+    display: grid;
+    align-items: center;
+    min-height: var(--exit-section-min-height);
+    padding-block: clamp(4.5rem, 10svh, 7.5rem) clamp(5rem, 10svh, 8rem);
+    background: transparent
+}
+
+.exit-scene__inner {
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+    margin-block: auto
+}
+
+.exit-scene__intro {
+    --scene-title-measure: none;
+    --scene-copy-measure: 38rem;
+    max-width: min(100%, 64rem)
+}
+
+.exit-scene__aside {
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+    max-width: min(100%, var(--exit-aside-measure));
+    text-align: center
+}
+
+.exit-scene__body {
+    margin: 0
+}
+
+.exit-scene__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.75rem, 2vw, 1.125rem)
+}
+
+@media(min-width:48rem) {
+    .exit-scene {
+        padding-block: clamp(5rem, 10svh, 7.5rem) clamp(5rem, 10svh, 8rem)
+    }
+    .exit-scene__inner {
+        gap: clamp(1.75rem, 4vw, 3rem)
+    }
+}
+
+@media(min-width:75rem) {
+    .exit-scene__inner {
+        grid-template-columns: minmax(0, .62fr) minmax(23rem, .38fr);
+        justify-items: stretch;
+        gap: clamp(2rem, 4vw, 4rem)
+    }
+    .exit-scene__intro {
+        justify-items: start;
+        text-align: start
+    }
+    .exit-scene__aside {
+        justify-items: start;
+        align-content: end;
+        justify-self: end;
+        text-align: start
+    }
+    .exit-scene__actions {
+        justify-content: flex-start
+    }
+}
+
+@media(min-width:120rem) {
+    .exit-scene {
+        --site-frame-max: 132rem;
+        --exit-aside-measure: 36rem
+    }
+    .exit-scene__inner {
+        gap: clamp(4.75rem, 4.5vw, 6.5rem)
+    }
+}
+
+@media(min-width:160rem) {
+    .exit-scene {
+        --site-frame-max: 148rem
+    }
+    .exit-scene__intro {
+        max-width: min(100%, 76rem)
+    }
+    .exit-scene__inner {
+        gap: clamp(5.5rem, 3.4vw, 7rem)
+    }
+}

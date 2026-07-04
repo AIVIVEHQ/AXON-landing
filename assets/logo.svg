@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="195" height="48" viewBox="0 0 195 48" fill="none" role="img" aria-label="CryptOwl">
+  <!-- 换皮点③：品牌 logo（占位 wordmark，上线前替换） -->
+  <text x="0" y="34" font-family="Poppins, sans-serif" font-weight="600" font-size="27" letter-spacing="0.5" fill="#f8fdff">Crypt</text>
+  <g transform="translate(76.5, 22.5)">
+    <circle r="11" stroke="#f8fdff" stroke-width="3" fill="none"/>
+    <circle r="3.2" fill="#f8fdff"/>
+  </g>
+  <text x="90" y="34" font-family="Poppins, sans-serif" font-weight="600" font-size="27" letter-spacing="0.5" fill="#f8fdff">wl</text>
+</svg>

@@ -4,6 +4,7 @@ import { initMotionPreference } from './lib/motion.js';
 import { setupScrollRuntime, getSmoother } from './scroll-runtime.js';
 import { initHeader } from './header.js';
 import { initHero } from './scenes/hero.js';
+import { initRewind } from './scenes/rewind.js';
 import { initQuestion } from './scenes/question.js';
 import { initStrategy } from './scenes/strategy.js';
 import { initTimeReplay } from './scenes/time-replay.js';
@@ -39,6 +40,7 @@ const start = () => {
   // 场景初始化按文档顺序；每个场景自行处理降级与断点
   const scenes = [
     ['hero', initHero],
+    ['rewind', initRewind],
     ['question', initQuestion],
     ['strategy', initStrategy],
     ['time-replay', initTimeReplay],

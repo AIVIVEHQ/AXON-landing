@@ -1,5 +1,19 @@
 /* 由 reference/split-css.py 从原站编译 CSS 整理生成，按场景拆分；改动请直接编辑本文件。 */
 
+/* 原站 <head> 内联的 boot 状态样式 */
+html[data-hero-reload-boot="pending"] .scroll-shell {
+    opacity: 0
+}
+
+html[data-initial-section-navigation="pending"] .scroll-shell {
+    opacity: 0
+}
+
+.gate-question__headline-line {
+    display: block;
+    white-space: nowrap
+}
+
 *,
 *:before,
 *:after {

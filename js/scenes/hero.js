@@ -415,7 +415,35 @@ const withOriginalPath = (path, measure) => {
   }
 };
 
-const pointAt = (path, length) => withOriginalPath(path, () => path.getPointAtLength(length));
+// 弧长采样表：每条 path 只在首次访问时测量一次（一次属性交换 + N 次 getPointAtLength），
+// 之后 tick 内的 pointAt 全部走纯数学插值，避免每帧强制 SVG 重排。
+const PATH_SAMPLE_TABLE_SIZE = 128;
+const pathSamplesCache = new WeakMap();
+const pathSamples = (path) => {
+  let samples = pathSamplesCache.get(path);
+  if (samples) return samples;
+  const length = totalLength(path);
+  samples = withOriginalPath(path, () =>
+    Array.from({ length: PATH_SAMPLE_TABLE_SIZE + 1 }, (_, i) => {
+      const point = path.getPointAtLength((length * i) / PATH_SAMPLE_TABLE_SIZE);
+      return { x: point.x, y: point.y };
+    }),
+  );
+  pathSamplesCache.set(path, samples);
+  return samples;
+};
+
+const pointAt = (path, length) => {
+  const total = totalLength(path);
+  const samples = pathSamples(path);
+  if (total <= 0) return samples[0];
+  const t = Math.min(1, Math.max(0, length / total)) * PATH_SAMPLE_TABLE_SIZE;
+  const index = Math.floor(t);
+  const a = samples[index];
+  const b = samples[Math.min(PATH_SAMPLE_TABLE_SIZE, index + 1)];
+  const f = t - index;
+  return { x: a.x + (b.x - a.x) * f, y: a.y + (b.y - a.y) * f };
+};
 
 // 解析拱门 path："M sx sy L lx ly A rx ry 0 0 1 rx2 ry2 L ex ey"
 const parseArchGeometry = (path) => {
@@ -443,7 +471,7 @@ const totalLength = (path) => {
   const cached = pathLengthCache.get(path);
   if (cached !== undefined) return cached;
   try {
-    const length = path.getTotalLength();
+    const length = withOriginalPath(path, () => path.getTotalLength());
     pathLengthCache.set(path, length);
     return length;
   } catch {

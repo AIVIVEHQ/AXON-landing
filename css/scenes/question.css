@@ -1,7 +1,8 @@
 /* 由 reference/split-css.py 从原站编译 CSS 整理生成，按场景拆分；改动请直接编辑本文件。 */
 
 .gate-question {
-    --question-headline-size: var(--scene-display-scale);
+    /* 换皮调整：最长行 "money still move" ≈7.9em，加 10.4vw 上限保证窄屏不溢出（宽屏 min 不生效） */
+    --question-headline-size: min(var(--scene-display-scale), 10.4vw);
     --question-gap: clamp(.9375rem, calc(var(--question-headline-size) * .135), 1.625rem);
     --question-lead-size: .75rem;
     --question-lead-line-height: 1.3;

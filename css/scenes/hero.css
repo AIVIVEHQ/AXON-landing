@@ -885,7 +885,8 @@ html:not([data-interaction-section=hero]) .hero-gate__grid-light {
     align-items: baseline;
     justify-content: center;
     gap: .34em;
-    flex-wrap: nowrap;
+    /* 换皮调整：新副标题更长，小屏允许折行（桌面单行可容纳，不受影响） */
+    flex-wrap: wrap;
     max-width: min(calc(var(--hero-gate-width) * 1.12), calc(100vw - 1.25rem));
     margin: calc(var(--hero-gate-width) * .15) 0 0;
     color: var(--color-contrast-3);
@@ -894,7 +895,7 @@ html:not([data-interaction-section=hero]) .hero-gate__grid-light {
     line-height: 1.35;
     letter-spacing: 0;
     text-align: center;
-    white-space: nowrap;
+    white-space: normal;
     user-select: text
 }
 

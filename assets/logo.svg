@@ -1,9 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="195" height="48" viewBox="0 0 195 48" fill="none" role="img" aria-label="CryptOwl">
-  <!-- 换皮点③：品牌 logo（占位 wordmark，上线前替换） -->
-  <text x="0" y="34" font-family="Poppins, sans-serif" font-weight="600" font-size="27" letter-spacing="0.5" fill="#f8fdff">Crypt</text>
-  <g transform="translate(76.5, 22.5)">
-    <circle r="11" stroke="#f8fdff" stroke-width="3" fill="none"/>
-    <circle r="3.2" fill="#f8fdff"/>
-  </g>
-  <text x="90" y="34" font-family="Poppins, sans-serif" font-weight="600" font-size="27" letter-spacing="0.5" fill="#f8fdff">wl</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -8 486 116">
+<!-- AXON Finance · W2 电路双线定制字标（纯矢量，无需字体；燃橙路由芯为品牌记忆点） -->
+<g stroke="#f7f5f1" stroke-width="8" fill="none"><path d="M0,100 L43,0 L86,100"/><path d="M20,60 H66 M15,74 H71"/><path d="M126,0 L158,37 M178,63 L212,100 M212,0 L178,37 M158,63 L126,100"/><circle cx="295" cy="50" r="45"/><circle cx="295" cy="50" r="28"/><path d="M378,100 L378,0 M386,10 L456,90 M464,0 L464,100"/></g><path d="M168,42 L176,50 L168,58 L160,50 Z" fill="#f5541c"/>
 </svg>

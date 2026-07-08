@@ -15,8 +15,8 @@ const LITE_INTERACTION_QUERY = `${BREAKPOINTS.coarsePointer}, ${BREAKPOINTS.phon
 
 /* ================= 刷新滚动记忆（对照 hero-reload-scroll） ================= */
 
-const MID_SCROLL_KEY = 'cryptowl.heroIntroWasMidScroll';
-const HERO_ZONE_KEY = 'cryptowl.heroReloadWasInHeroZone';
+const MID_SCROLL_KEY = 'axon.heroIntroWasMidScroll';
+const HERO_ZONE_KEY = 'axon.heroReloadWasInHeroZone';
 const SCROLL_EPSILON = 1;
 const RELOAD_RESET_FRAMES = 3;
 const RELOAD_LOAD_RESET_WINDOW_MS = 850;

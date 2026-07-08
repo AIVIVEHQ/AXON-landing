@@ -10,28 +10,29 @@ const MOBILE_MAX_DPR = 1;
 const MAX_RENDER_DIMENSION = 2200;
 const RESIZE_DEBOUNCE_MS = 180;
 
+// 换皮：AXON 燃橙 VI，对应 G2 暗场辉光（暖白核 → 燃橙 → 深琥珀 → 曜黑）
 const FALLBACK_RGB = {
-  '--rgb-accent': '124 230 255',
-  '--rgb-accent-muted': '150 205 222',
-  '--rgb-accent-soft': '190 239 250',
-  '--rgb-market-short': '65 121 222',
-  '--rgb-base-deep': '3 6 11',
-  '--rgb-base': '7 9 13',
+  '--rgb-accent': '245 84 28',
+  '--rgb-accent-muted': '217 154 120',
+  '--rgb-accent-soft': '255 233 214',
+  '--rgb-market-short': '143 133 120',
+  '--rgb-base-deep': '5 4 3',
+  '--rgb-base': '10 9 8',
   '--rgb-white': '255 255 255',
 };
 
-// 渐变层定义：[offset, css 变量, alpha]
+// 渐变层定义：[offset, css 变量, alpha]（尾部用 --rgb-accent 保持 G2 暖调衰减）
 const LAYER_OUTER = [
   [0, '--rgb-accent-muted', 0.1],
   [0.3, '--rgb-accent-muted', 0.069],
-  [0.58, '--rgb-market-short', 0.032],
+  [0.58, '--rgb-accent', 0.032],
   [0.82, '--rgb-base', 0.009],
   [1, '--rgb-base-deep', 0],
 ];
 const LAYER_MID = [
   [0, '--rgb-accent-soft', 0.132],
   [0.3, '--rgb-accent-muted', 0.082],
-  [0.6, '--rgb-market-short', 0.036],
+  [0.6, '--rgb-accent', 0.036],
   [0.84, '--rgb-base', 0.009],
   [1, '--rgb-base-deep', 0],
 ];
@@ -39,8 +40,8 @@ const LAYER_CORE = [
   [0, '--rgb-white', 0.34],
   [0.2, '--rgb-accent-soft', 0.22],
   [0.52, '--rgb-accent-muted', 0.078],
-  [0.8, '--rgb-market-short', 0.014],
-  [1, '--rgb-market-short', 0],
+  [0.8, '--rgb-accent', 0.014],
+  [1, '--rgb-accent', 0],
 ];
 const LAYER_MASK = [
   [0, '--rgb-white', 1],

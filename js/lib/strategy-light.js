@@ -26,7 +26,7 @@ const SCENE_START = 'top 72%';
 // 手写 flip 额外写入 transformOrigin，这里一并清除
 const RESTORE_CLEAR_PROPS =
   'bottom,height,inset,left,position,right,top,transform,transformOrigin,width,x,y,scale,scaleX,scaleY,zIndex';
-const DOT_RESTORED_EVENT = 'cryptowl:strategy-dot-restored';
+const DOT_RESTORED_EVENT = 'axon:strategy-dot-restored';
 
 let cleanup;
 

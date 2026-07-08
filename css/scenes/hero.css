@@ -871,7 +871,7 @@ html:not([data-interaction-section=hero]) .hero-gate__grid-light {
     display: block;
     color: var(--color-contrast);
     font-size: var(--hero-headline-word-size);
-    font-weight: 900;
+    font-weight: 800;
     line-height: .8;
     white-space: nowrap;
     user-select: text

@@ -1,6 +1,6 @@
 // 动效偏好（full / comfort），对照原站 motionPreference 模块。
 // comfort = 减弱动效：pin/scrub 场景直接静态展示，平滑滚动降为 0.25。
-const STORAGE_KEY = 'cryptowl.motionPreference';
+const STORAGE_KEY = 'axon.motionPreference';
 const EVENT_NAME = 'sitemotionpreferencechange';
 const CHOICE_SELECTOR = '[data-motion-choice]';
 const VALID = new Set(['comfort', 'full']);

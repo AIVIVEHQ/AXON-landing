@@ -1,9 +1,9 @@
 // ---- 换皮点②：品牌与链接 ----
 // 文案主要写在 index.html 里（搜索替换即可）；这里集中品牌级常量。
 export const BRAND = {
-  name: 'CryptOwl',
-  productUrl: '/product/',
-  contactUrl: '/contact/',
+  name: 'AXON Finance',
+  productUrl: 'https://axon-finance.gitbook.io/axon-finance-docs/',
+  contactUrl: 'mailto:contact@axonfinance.xyz',
 };
 
 // ScrollSmoother 平滑系数（对照原站 scroll-runtime）

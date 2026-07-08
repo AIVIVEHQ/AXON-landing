@@ -1,115 +1,83 @@
 /* 由 reference/split-css.py 从原站编译 CSS 整理生成，按场景拆分；改动请直接编辑本文件。 */
 
-/* ---- 换皮点①：字体 ----
-   原站使用商业字体 Gilroy(display) / Biotif(body)。模板以免费字体
-   Poppins / Inter 顶替，family 名直接用替代字体名；如购得授权，
-   将 woff2 放入 fonts/ 并把下方 src 与 tokens 中的 --font-* 换回即可。*/
+/* ---- 换皮点①：字体（AXON VI）----
+   Display: Bricolage Grotesque（可变字体 200-800）
+   Body: Geist Sans / Mono: Geist Mono（可变字体 100-900），均为 OFL 开源。*/
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/poppins-300.woff2) format("woff2");
+    font-family: "Bricolage Grotesque";
+    src: url(../fonts/bricolage.woff2) format("woff2");
     font-display: swap;
     font-style: normal;
-    font-weight: 300
+    font-weight: 200 800
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/poppins-600.woff2) format("woff2");
+    font-family: Geist;
+    src: url(../fonts/geist.woff2) format("woff2");
     font-display: swap;
     font-style: normal;
-    font-weight: 600
+    font-weight: 100 900
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/poppins-900.woff2) format("woff2");
+    font-family: "Geist Mono";
+    src: url(../fonts/geist-mono.woff2) format("woff2");
     font-display: swap;
     font-style: normal;
-    font-weight: 900
-}
-
-@font-face {
-    font-family: Inter;
-    src: url(../fonts/inter-400.woff2) format("woff2");
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400
-}
-
-@font-face {
-    font-family: Inter;
-    src: url(../fonts/inter-700.woff2) format("woff2");
-    font-display: swap;
-    font-style: normal;
-    font-weight: 700
-}
-
-@font-face {
-    font-family: "IBM Plex Mono";
-    src: url(../fonts/ibm-plex-mono-400.woff2) format("woff2");
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400
-}
-
-@font-face {
-    font-family: "IBM Plex Mono";
-    src: url(../fonts/ibm-plex-mono-500.woff2) format("woff2");
-    font-display: swap;
-    font-style: normal;
-    font-weight: 500
+    font-weight: 100 900
 }
 
 :root {
     color-scheme: dark;
-    --rgb-base-deep: 3 6 11;
-    --rgb-base: 7 9 13;
-    --rgb-contrast-2: 224 235 242;
-    --rgb-contrast-3: 183 198 207;
-    --rgb-accent: 124 230 255;
-    --rgb-accent-muted: 150 205 222;
-    --rgb-accent-soft: 190 239 250;
-    --rgb-market-long: 126 226 244;
-    --rgb-market-short: 65 121 222;
+    /* ---- 换皮：AXON Finance VI「P7 玄岩·燃橙」（brand-vi-system.md）---- */
+    --rgb-base-deep: 5 4 3;
+    --rgb-base: 10 9 8;
+    --rgb-contrast-2: 232 226 219;
+    --rgb-contrast-3: 194 184 172;
+    --rgb-accent: 245 84 28;
+    --rgb-accent-muted: 217 154 120;
+    --rgb-accent-soft: 255 233 214;
+    --rgb-market-long: 255 138 61;
+    --rgb-market-short: 143 133 120;
     --rgb-status-error: 226 104 112;
-    --color-base: #07090d;
-    --color-base-deep: #03060b;
-    --color-surface: #0c121b;
+    --color-base: #0a0908;
+    --color-base-deep: #050403;
+    --color-surface: #161210;
     --color-surface-glass: rgb(var(--rgb-base) / .5);
     --color-surface-glass-active: rgb(var(--rgb-base) / .56);
     --color-overlay: rgb(var(--rgb-base-deep) / .94);
-    --color-contrast: #f8fdff;
-    --color-contrast-2: #e0ebf2;
-    --color-contrast-3: #b7c6cf;
-    --color-contrast-4: #84949e;
+    --color-contrast: #f7f4f1;
+    --color-contrast-2: #e8e2db;
+    --color-contrast-3: #c2b8ac;
+    --color-contrast-4: #8f8578;
     --color-contrast-5: rgb(var(--rgb-accent-soft) / .12);
-    --color-accent: #7ce6ff;
-    --color-accent-muted: #96cdde;
+    --color-accent: #f5541c;
+    --color-accent-muted: #d99a78;
     --color-focus-ring: rgb(var(--rgb-accent) / .42);
-    --color-market-long: #7ee2f4;
-    --color-market-short: #4179de;
+    --color-market-long: #ff8a3d;
+    --color-market-short: #8f8578;
     --color-status-positive: #7ed6a3;
     --color-status-negative: #e87684;
     --color-status-error: #e26870;
     --color-status-error-muted: rgb(var(--rgb-status-error) / .86);
     --color-status-error-line: rgb(var(--rgb-status-error) / .36);
     --color-control-background: rgb(var(--rgb-base) / .82);
-    --color-control-background-hover: rgb(12 18 27 / .9);
-    --color-visual-accent-soft: #bdf7ff;
-    --color-visual-accent: #2eafff;
-    --color-visual-accent-strong: #1c83d8;
+    --color-control-background-hover: rgb(22 18 16 / .9);
+    --color-visual-accent-soft: #ffe9d6;
+    --color-visual-accent: #ff8a3d;
+    --color-visual-accent-strong: #f0500f;
     --site-grid-size: 6rem;
     --site-grid-line-color: rgb(var(--rgb-accent-muted) / .045);
     --site-grid-origin-x: 50%;
     --site-grid-origin-y: 50%;
     --site-hover-light-size: clamp(23.5rem, 30.5vw, 35.5rem);
-    --font-display: "Poppins", "Inter Tight", Inter, "Helvetica Neue", Arial, sans-serif;
-    --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+    --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Geist", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Geist Mono", "SFMono-Regular", Menlo, monospace;
     --font-weight-body-regular: 400;
     --font-weight-body-bold: 700;
     --font-weight-display-light: 300;
-    --font-weight-display-strong: 900;
+    --font-weight-display-strong: 800;
     --font-weight-mono-regular: 400;
     --font-size-display-xl: clamp(4.5rem, 8vw, 7.5rem);
     --font-size-display-lg: clamp(3.5rem, 6vw, 5.5rem);

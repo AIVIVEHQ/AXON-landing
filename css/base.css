@@ -1275,3 +1275,16 @@ html[data-motion=comfort] .rewind-track {
 [data-time-replay-metric][data-metric-tone=negative] {
     color: var(--color-status-negative)
 }
+
+/* 中文模式：CJK 字形占满 em 框，收紧的西文行高会叠行，这里放宽 */
+html[lang="zh-CN"] .gate-question__headline {
+    line-height: 1.12
+}
+
+html[lang="zh-CN"] .scene-title {
+    line-height: 1.16
+}
+
+html[lang="zh-CN"] .hero__subhead {
+    line-height: 1.6
+}

@@ -1,6 +1,7 @@
 // 入口：注册 GSAP 插件 → motion 偏好 → ScrollSmoother → header → 各场景。
 // GSAP 及插件由 index.html 以 UMD <script defer> 引入（window.gsap 等）。
 import { initMotionPreference } from './lib/motion.js';
+import { applyLanguage, initLangToggle } from './lib/i18n.js';
 import { setupScrollRuntime, getSmoother } from './scroll-runtime.js';
 import { initHeader } from './header.js';
 import { initHero } from './scenes/hero.js';
@@ -22,6 +23,8 @@ const start = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ...(SplitText ? [SplitText] : []));
 
   initMotionPreference();
+  applyLanguage(); // 必须先于所有场景初始化：SplitText 要在替换后的文本上切分
+  initLangToggle();
   setupScrollRuntime();
 
   /** 传给每个场景的共享上下文 */

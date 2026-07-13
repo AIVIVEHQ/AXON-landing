@@ -71,9 +71,9 @@
     --site-grid-origin-x: 50%;
     --site-grid-origin-y: 50%;
     --site-hover-light-size: clamp(23.5rem, 30.5vw, 35.5rem);
-    --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-    --font-body: "Geist", "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "Geist Mono", "SFMono-Regular", Menlo, monospace;
+    --font-display: "Bricolage Grotesque", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Geist", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Geist Mono", "SFMono-Regular", Menlo, "PingFang SC", "Noto Sans SC", monospace;
     --font-weight-body-regular: 400;
     --font-weight-body-bold: 700;
     --font-weight-display-light: 300;

@@ -28,12 +28,14 @@ html:not([data-js]) body:has(.hero.hero--intro-boot:not(.is-intro-complete)) .he
 }
 
 .header--subtle-entry .header__brand,
+.header--subtle-entry .header__lang-toggle,
 .header--subtle-entry .header__menu-trigger {
     opacity: 1;
     transform: none
 }
 
 html[data-js] .header--subtle-entry:not([data-subtle-header-motion=ready]) .header__brand,
+html[data-js] .header--subtle-entry:not([data-subtle-header-motion=ready]) .header__lang-toggle,
 html[data-js] .header--subtle-entry:not([data-subtle-header-motion=ready]) .header__menu-trigger {
     opacity: 0;
     transform: translate3d(0, -.375rem, 0)
@@ -44,6 +46,42 @@ html[data-js] .header--subtle-entry:not([data-subtle-header-motion=ready]) .head
     position: relative;
     z-index: 10;
     pointer-events: auto
+}
+
+/* 换皮新增：右侧按钮组（语言切换 + 菜单） */
+.header__controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    pointer-events: none
+}
+
+.header__lang-toggle {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    height: var(--header-menu-size);
+    padding: 0 .85em;
+    border: 1px solid rgb(var(--rgb-accent-soft) / .22);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-glass);
+    color: var(--color-contrast-2);
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: .08em;
+    line-height: 1;
+    cursor: pointer;
+    transition: color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard)
+}
+
+.header__lang-toggle:hover {
+    color: var(--color-contrast);
+    border-color: rgb(var(--rgb-accent) / .5)
+}
+
+.header__lang-toggle:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px
 }
 
 .header__brand {
